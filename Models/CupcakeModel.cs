@@ -13,6 +13,7 @@ namespace CupcakeEntity.Models
         public int Id { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage ="Numbers are not allowed in name.")]
         public string Name { get; set; }
         [Required]
         public decimal Price { get; set; }

@@ -32,32 +32,53 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
+
+    @if (Model.Any())
     {
-        <tr style="border-bottom:1px solid #485785">
-            <td>
-                <div class="btn btn-default btn-sm">@Html.ActionLink(item.Name, "Details", new { id = item.Id }) </div>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateModified)
-            </td>
-            <td>
-                <div class="btn btn-default btn-sm">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</div>
-                |
-                <div class="btn btn-default btn-sm">@Html.ActionLink("Details", "Details", new { id = item.Id }) </div>
-                |
-                <div class="btn btn-default btn-sm">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</div>
-            </td>
+        foreach (var item in Model)
+        {
+            <tr style="border-bottom:1px solid #485785">
+                <td>
+                    <div class="btn btn-default btn-sm">@Html.ActionLink(item.Name, "Details", new { id = item.Id }) </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateModified)
+                </td>
+                <td>
+                    <div class="btn btn-default btn-sm">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</div>
+                    |
+                    <div class="btn btn-default btn-sm">@Html.ActionLink("Details", "Details", new { id = item.Id }) </div>
+                    |
+                    <div class="btn btn-default btn-sm">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</div>
+                </td>
 
 
-        </tr>
-        
+            </tr>
+
+        }
     }
+     else
+     {
+        <p></p>
+        <tr>
+            <td class="h3">
+                <p></p>
+                <p></p>
+                No Cupcakes found.
+            </td>
+        </tr>
+     }
+
+
+
 
 </table>
+
+<p></p>
+<div class="btn btn-default btn-sm">@Html.ActionLink("Back to List", "Index")</div>
