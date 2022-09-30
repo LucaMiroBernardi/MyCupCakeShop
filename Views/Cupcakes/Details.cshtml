@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p></p>
+<p></p>
 <h2>Details of @Html.DisplayFor(model => model.Name)</h2>
 
 <div>
     <!-- <h4>CupcakeModel</h4> -->
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="color:#485785">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -46,6 +48,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div class="btn btn-default btn-sm">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</div>
+    |
+    <div class="btn btn-default btn-sm">@Html.ActionLink("Back to List", "Index")</div>
+    
 </p>

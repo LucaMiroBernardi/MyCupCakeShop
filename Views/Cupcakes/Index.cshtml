@@ -5,13 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p></p>
+<p></p>
 <h2>My Cupcakes!</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    <div class="btn btn-default">@Html.ActionLink("Create New", "Create")</div>
+
+    
 </p>
-<table class="table">
-    <tr>
+<table class="table table-group-divider" style="color:#485785">
+    <tr style="border-bottom:1px solid #485785">
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -27,26 +32,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateModified)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr style="border-bottom:1px solid #485785">
+            <td>
+                <div class="btn btn-default btn-sm">@Html.ActionLink(item.Name, "Details", new { id = item.Id }) </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModified)
+            </td>
+            <td>
+                <div class="btn btn-default btn-sm">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</div>
+                |
+                <div class="btn btn-default btn-sm">@Html.ActionLink("Details", "Details", new { id = item.Id }) </div>
+                |
+                <div class="btn btn-default btn-sm">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</div>
+            </td>
+
+
+        </tr>
+        
+    }
 
 </table>

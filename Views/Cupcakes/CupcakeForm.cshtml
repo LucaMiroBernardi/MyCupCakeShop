@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p></p>
+<p></p>
 <h2>Cupcake Form</h2>
 
 
@@ -18,8 +20,9 @@
 
     <h4>Create Your Own Cupcake</h4>
 
+    <p></p>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
+    <div class="form-group" style="color:#485785">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
@@ -27,7 +30,8 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <p></p>
+    <div class="form-group" style="color:#485785">
         @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
@@ -35,7 +39,8 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <p></p>
+    <div class="form-group" style="color:#485785">
         @Html.LabelFor(model => model.DateCreated, "Date Created (YYYY-MM-DD)", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
@@ -53,14 +58,16 @@
 
     <input type="hidden" name="Id" value="@Model.Id" />
 
+    <p></p>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+        <div class="col-md-offset-2 col-md-10" style="color:#485785">
+            <input style="color:#485785" type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
 </div>
 }
 
+<p></p>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
