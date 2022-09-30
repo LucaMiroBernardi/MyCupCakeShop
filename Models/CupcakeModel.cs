@@ -16,6 +16,7 @@ namespace CupcakeEntity.Models
         [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage ="Numbers are not allowed in name.")]
         public string Name { get; set; }
         [Required]
+        [Range(0.01, 100.00, ErrorMessage = "Price must be between $0.01 and $100.00")]
         public decimal Price { get; set; }
         [Required]
         [DisplayName("Date Created")]
