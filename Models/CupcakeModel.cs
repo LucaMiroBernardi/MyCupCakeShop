@@ -13,7 +13,8 @@ namespace CupcakeEntity.Models
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage ="Numbers are not allowed in name.")]
+        //[MaxLength(14, ErrorMessage = "Max 14 Characters")]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Invalid name.")]
         public string Name { get; set; }
         [Required]
         [Range(0.01, 100.00, ErrorMessage = "Price must be between $0.01 and $100.00")]
@@ -27,6 +28,7 @@ namespace CupcakeEntity.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? DateModified { get; set; }
+
 
         // Empty Constructor
         public CupcakeModel()

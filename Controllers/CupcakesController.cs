@@ -13,7 +13,7 @@ namespace CupcakeEntity.Controllers
     {
 
         // refernces DBSet in Identity Models
-        private ApplicationDbContext context;
+        private  ApplicationDbContext context;
 
         public CupcakesController()
         {
@@ -32,6 +32,25 @@ namespace CupcakeEntity.Controllers
 
             return View("Index", cupcakes);
         }
+
+        //public ActionResult Index(string sortOrder)
+        //{
+         //   ViewData["NameSort"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+          //  var cupcakes = from s in context.Cupcakes
+         //                  select s;
+         //   switch (sortOrder)
+          //  {
+         //       case "Name":
+          //          cupcakes = cupcakes.OrderByDescending(s => s.Name);
+          //          break;
+
+          //  }
+
+          //  var c = cupcakes.ToList();
+
+          //  return View("Index", c);
+
+        //}
 
         public ActionResult Details(int id)
         {
